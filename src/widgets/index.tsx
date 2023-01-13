@@ -6,7 +6,7 @@ async function onActivate(plugin: ReactRNPlugin) {
     id: "hover",
     title: "Border Color | On Hover (hex)",
     description: "Provide a hex color for when you hover over the portal.",
-    defaultValue: "#6786fe",
+    defaultValue: "#9437ff",
   });
 
   plugin.track(async (reactivePlugin) => {
@@ -22,7 +22,7 @@ async function onActivate(plugin: ReactRNPlugin) {
     id: "focused",
     title: "Border Color | When Focused (hex)",
     description: "Provide a hex color for when the portal is focused.",
-    defaultValue: "#ffb146",
+    defaultValue: "#6786fe",
   });
 
   plugin.track(async (reactivePlugin) => {
@@ -38,7 +38,7 @@ async function onActivate(plugin: ReactRNPlugin) {
     id: "selected",
     title: "Border Color | When Selected (hex)",
     description: "Provide a hex color for when the portal is selected.",
-    defaultValue: "#9437ff",
+    defaultValue: "#ff2600",
   });
 
   plugin.track(async (reactivePlugin) => {
@@ -54,7 +54,7 @@ async function onActivate(plugin: ReactRNPlugin) {
     id: "carditemleft",
     title: "Card Item | Left Border Color (hex)",
     description: "Provide a hex color for when the portal is a card item.",
-    defaultValue: "#9437ff",
+    defaultValue: "#6786fe",
   });
 
   plugin.track(async (reactivePlugin) => {
@@ -77,7 +77,7 @@ async function onActivate(plugin: ReactRNPlugin) {
     const carditemright = await reactivePlugin.settings.getSetting("carditemright");
     await reactivePlugin.app.registerCSS(
       "carditemright",
-      `#hierarchy-editor .portal-tree-node-box--card-item:before { border-right-color: ${carditemright}px; }`
+      `#hierarchy-editor .portal-tree-node-box--card-item:before { border-right-color: ${carditemright}; }`
     );
   });
 
@@ -86,7 +86,7 @@ async function onActivate(plugin: ReactRNPlugin) {
     id: "carditemleftwidth",
     title: "Card Item | Left Border Width (px)",
     description: "Set a value for thickness of the left border of a portal when it's a card item. (Note: Set to 0 if you do not want this border.)",
-    defaultValue: "1.5",
+    defaultValue: "3",
   });
 
   plugin.track(async (reactivePlugin) => {
@@ -102,7 +102,7 @@ async function onActivate(plugin: ReactRNPlugin) {
     id: "carditemrightwidth",
     title: "Card Item | Right Border Width (px)",
     description: "Set a value for thickness of the right border of a portal when it's a card item. (Note: Set to 0 if you do not want this border.)",
-    defaultValue: "1.5",
+    defaultValue: "0",
   });
 
   plugin.track(async (reactivePlugin) => {
