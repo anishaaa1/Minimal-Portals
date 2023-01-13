@@ -38,7 +38,7 @@ async function onActivate(plugin: ReactRNPlugin) {
     id: "selected",
     title: "Border Color | When Selected (hex)",
     description: "Provide a hex color for when the portal is selected.",
-    defaultValue: "#7b4fd6",
+    defaultValue: "#9437ff",
   });
 
   plugin.track(async (reactivePlugin) => {
@@ -54,7 +54,7 @@ async function onActivate(plugin: ReactRNPlugin) {
     id: "carditemleft",
     title: "Card Item | Left Border Color (hex)",
     description: "Provide a hex color for when the portal is a card item.",
-    defaultValue: "#000000",
+    defaultValue: "#9437ff",
   });
 
   plugin.track(async (reactivePlugin) => {
@@ -70,7 +70,7 @@ async function onActivate(plugin: ReactRNPlugin) {
     id: "carditemright",
     title: "Card Item | Right Border Color (hex)",
     description: "Provide a hex color for when the portal is a card item.",
-    defaultValue: "#6515dd",
+    defaultValue: "#000000",
   });
 
   plugin.track(async (reactivePlugin) => {
