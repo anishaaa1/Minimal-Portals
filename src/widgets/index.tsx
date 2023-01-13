@@ -86,7 +86,7 @@ async function onActivate(plugin: ReactRNPlugin) {
     id: "carditemleftwidth",
     title: "Card Item | Left Border Width (px)",
     description: "Set a value for thickness of the left border of a portal when it's a card item. (Note: Set to 0 if you do not want this border.)",
-    defaultValue: "1",
+    defaultValue: "1.5",
   });
 
   plugin.track(async (reactivePlugin) => {
