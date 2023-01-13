@@ -6,7 +6,7 @@ async function onActivate(plugin: ReactRNPlugin) {
     id: "hover",
     title: "Border Color | On Hover (hex)",
     description: "Provide a hex color for when you hover over the portal.",
-    defaultValue: "#ff0000",
+    defaultValue: "#6786fe",
   });
 
   plugin.track(async (reactivePlugin) => {
@@ -22,7 +22,7 @@ async function onActivate(plugin: ReactRNPlugin) {
     id: "focused",
     title: "Border Color | When Focused (hex)",
     description: "Provide a hex color for when the portal is focused.",
-    defaultValue: "#ff0000",
+    defaultValue: "#ffb146",
   });
 
   plugin.track(async (reactivePlugin) => {
@@ -38,7 +38,7 @@ async function onActivate(plugin: ReactRNPlugin) {
     id: "selected",
     title: "Border Color | When Selected (hex)",
     description: "Provide a hex color for when the portal is selected.",
-    defaultValue: "#ff0000",
+    defaultValue: "#7b4fd6",
   });
 
   plugin.track(async (reactivePlugin) => {
@@ -49,12 +49,12 @@ async function onActivate(plugin: ReactRNPlugin) {
     );
   });
 
-  // Left Border when Card Item
+  // Color of Left Border when Card Item
   await plugin.settings.registerStringSetting({
     id: "carditemleft",
     title: "Card Item | Left Border Color (hex)",
     description: "Provide a hex color for when the portal is a card item.",
-    defaultValue: "#ff0000",
+    defaultValue: "#000000",
   });
 
   plugin.track(async (reactivePlugin) => {
@@ -65,25 +65,25 @@ async function onActivate(plugin: ReactRNPlugin) {
     );
   });
 
-  // Right Border when Card Item
+  // Color of Right Border when Card Item
   await plugin.settings.registerStringSetting({
-    id: "carditemleftwidth",
+    id: "carditemright",
     title: "Card Item | Right Border Color (hex)",
     description: "Provide a hex color for when the portal is a card item.",
-    defaultValue: "#ff0000",
+    defaultValue: "#7b4fd6",
   });
 
   plugin.track(async (reactivePlugin) => {
-    const carditemleftwidth = await reactivePlugin.settings.getSetting("carditemleftwidth");
+    const carditemright = await reactivePlugin.settings.getSetting("carditemright");
     await reactivePlugin.app.registerCSS(
-      "carditemleftwidth",
-      `#hierarchy-editor .portal-tree-node-box--card-item:before { border-right-width: ${carditemleftwidth}px; }`
+      "carditemright",
+      `#hierarchy-editor .portal-tree-node-box--card-item:before { border-right-width: ${carditemright}px; }`
     );
   });
 
   // Width of Left Border when Card Item
   await plugin.settings.registerStringSetting({
-    id: "carditemrightwidth",
+    id: "carditemleftwidth",
     title: "Card Item | Left Border Width (px)",
     description: "Set a value for thickness of the left border of a portal when it's a card item. (Note: Set to 0 if you do not want this border.)",
     defaultValue: "1",
