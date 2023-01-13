@@ -70,14 +70,14 @@ async function onActivate(plugin: ReactRNPlugin) {
     id: "carditemright",
     title: "Card Item | Right Border Color (hex)",
     description: "Provide a hex color for when the portal is a card item.",
-    defaultValue: "#7b4fd6",
+    defaultValue: "#6515dd",
   });
 
   plugin.track(async (reactivePlugin) => {
     const carditemright = await reactivePlugin.settings.getSetting("carditemright");
     await reactivePlugin.app.registerCSS(
       "carditemright",
-      `#hierarchy-editor .portal-tree-node-box--card-item:before { border-right-width: ${carditemright}px; }`
+      `#hierarchy-editor .portal-tree-node-box--card-item:before { border-right-color: ${carditemright}px; }`
     );
   });
 
@@ -93,7 +93,7 @@ async function onActivate(plugin: ReactRNPlugin) {
     const carditemleftwidth = await reactivePlugin.settings.getSetting("carditemleftwidth");
     await reactivePlugin.app.registerCSS(
       "carditemleftwidth",
-      `#hierarchy-editor .portal-tree-node-box--card-item:before { border-left-color: ${carditemleftwidth}px; }`
+      `#hierarchy-editor .portal-tree-node-box--card-item:before { border-left-width: ${carditemleftwidth}px; }`
     );
   });
 
@@ -109,7 +109,7 @@ async function onActivate(plugin: ReactRNPlugin) {
     const carditemrightwidth = await reactivePlugin.settings.getSetting("carditemrightwidth");
     await reactivePlugin.app.registerCSS(
       "carditemrightwidth",
-      `#hierarchy-editor .portal-tree-node-box--card-item:before { border-right-color: ${carditemrightwidth}px; }`
+      `#hierarchy-editor .portal-tree-node-box--card-item:before { border-right-width: ${carditemrightwidth}px; }`
     );
   });
 }
