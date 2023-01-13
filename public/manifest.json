@@ -1,17 +1,16 @@
 {
+  "author": "Anisha",
+  "name": "Minimal Portals",
+  "description": "This snippet minimalizes the look of portals to be unobtrusive, clean, and pleasing to the eye.",
+  "enableOnMobile": true,
+  "id": "Anisha-MinimalPortals",
+  "repoUrl": "https://github.com/anishaaa1/Minimal-Portals",
   "manifestVersion": 1,
-  "id": "snippet_template",
-  "name": "Snippet Template",
-  "author": "remnote",
-  "repoUrl": "https://www.google.com",
   "version": {
     "major": 0,
     "minor": 0,
     "patch": 1
   },
-  "theme": [],
-  "enableOnMobile": false,
-  "description": "",
   "requestNative": false,
   "requiredScopes": [
     {

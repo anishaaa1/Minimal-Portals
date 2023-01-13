@@ -1,3 +1,14 @@
-[data-rem-tags~="plugin-style"] {
-  background: orange;
+/* Idle State (No Hover) */
+#hierarchy-editor .portal-tree-node-box {
+	border-radius: 5px;
+	transition: border-color .35s ease;
+}
+/* On Hover */
+#hierarchy-editor .portal-tree-node-box:hover {
+	border-radius: 5px;
+	transition: border-color .35s ease;
+}
+/* Transparent When Not Focused */
+#hierarchy-editor .portal-tree-node-box:before {
+	background: transparent;
 }

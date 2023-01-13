@@ -1,73 +1,116 @@
 import { declareIndexPlugin, ReactRNPlugin } from "@remnote/plugin-sdk";
 
-/**
- * Simple example snippet plugin which shows how to:
- * - Register style settings
- * - Register Custom CSS
- * - Register a command
- *
- * How to Use:
- * - Tag a Rem with ##Plugin Style, or use the /Add Plugin Style command on a Rem
- * - The Rem will be styled with the CSS defined in the plugin
- */
 async function onActivate(plugin: ReactRNPlugin) {
-  // Register a setting to change the Rem's text color
+  // On Hover
   await plugin.settings.registerStringSetting({
-    id: "color",
-    title: "Text Color (hex)",
-    description: "Provide a hex color for the text",
+    id: "hover",
+    title: "Border Color | On Hover (hex)",
+    description: "Provide a hex color for when you hover over the portal.",
     defaultValue: "#ff0000",
   });
 
-  // Each time the setting changes, re-register the text color css.
   plugin.track(async (reactivePlugin) => {
-    const color = await reactivePlugin.settings.getSetting("color");
+    const hover = await reactivePlugin.settings.getSetting("hover");
     await reactivePlugin.app.registerCSS(
-      "color",
-      `[data-rem-tags~="plugin-style"] { color: ${color}; }`
+      "hover",
+      `#hierarchy-editor .portal-tree-node-box:hover { border-color: ${hover}; }`
     );
   });
 
-  // Register a setting to change the Rem's margin
+  // When Focused
   await plugin.settings.registerStringSetting({
-    id: "margin",
-    title: "Rem Margin (px)",
-    description: "Provide a margin for the Rem",
-    defaultValue: "10",
+    id: "focused",
+    title: "Border Color | When Focused (hex)",
+    description: "Provide a hex color for when the portal is focused.",
+    defaultValue: "#ff0000",
   });
 
-  // Each time the margin setting changes, re-register the margin css.
   plugin.track(async (reactivePlugin) => {
-    const margin = await reactivePlugin.settings.getSetting<string>("margin");
-    try {
-      const marginAsNumber = Number.parseInt(margin);
-      await reactivePlugin.app.registerCSS(
-        "margin",
-        `[data-rem-tags~="plugin-style"] { margin: ${marginAsNumber}px; }`
-      );
-    } catch {}
+    const focused = await reactivePlugin.settings.getSetting("focused");
+    await reactivePlugin.app.registerCSS(
+      "focused",
+      `#hierarchy-editor .portal-tree-node-box--focused, #hierarchy-editor .portal-tree-node-box--focused:hover { border-color: ${focused}; }`
+    );
   });
 
-  // A command that adds a style tag to the current focused Rem.
-  await plugin.app.registerCommand({
-    id: "add-style-tag",
-    name: "Add Plugin Style",
-    description: "Add a style tag to the current focused Rem",
-    action: async () => {
-      const focusedRem = await plugin.focus.getFocusedRem();
-      if (!focusedRem) {
-        return;
-      }
-      let tag = await plugin.rem.findByName(["Plugin Style"], null);
-      if (!tag) {
-        tag = await plugin.rem.createRem();
-        if (!tag) {
-          return;
-        }
-        await tag.setText(["Plugin Style"]);
-      }
-      await focusedRem.addTag(tag);
-    },
+  // When Selected
+  await plugin.settings.registerStringSetting({
+    id: "selected",
+    title: "Border Color | When Selected (hex)",
+    description: "Provide a hex color for when the portal is selected.",
+    defaultValue: "#ff0000",
+  });
+
+  plugin.track(async (reactivePlugin) => {
+    const selected = await reactivePlugin.settings.getSetting("selected");
+    await reactivePlugin.app.registerCSS(
+      "selected",
+      `#hierarchy-editor .portal-tree-node-box--selected, #hierarchy-editor .portal-tree-node-box--selected:hover { border-color: ${selected}; }`
+    );
+  });
+
+  // Left Border when Card Item
+  await plugin.settings.registerStringSetting({
+    id: "carditemleft",
+    title: "Card Item | Left Border Color (hex)",
+    description: "Provide a hex color for when the portal is a card item.",
+    defaultValue: "#ff0000",
+  });
+
+  plugin.track(async (reactivePlugin) => {
+    const carditemleft = await reactivePlugin.settings.getSetting("carditemleft");
+    await reactivePlugin.app.registerCSS(
+      "carditemleft",
+      `#hierarchy-editor .portal-tree-node-box--card-item:before { border-left-color: ${carditemleft}; }`
+    );
+  });
+
+  // Right Border when Card Item
+  await plugin.settings.registerStringSetting({
+    id: "carditemleftwidth",
+    title: "Card Item | Right Border Color (hex)",
+    description: "Provide a hex color for when the portal is a card item.",
+    defaultValue: "#ff0000",
+  });
+
+  plugin.track(async (reactivePlugin) => {
+    const carditemleftwidth = await reactivePlugin.settings.getSetting("carditemleftwidth");
+    await reactivePlugin.app.registerCSS(
+      "carditemleftwidth",
+      `#hierarchy-editor .portal-tree-node-box--card-item:before { border-right-width: ${carditemleftwidth}px; }`
+    );
+  });
+
+  // Width of Left Border when Card Item
+  await plugin.settings.registerStringSetting({
+    id: "carditemrightwidth",
+    title: "Card Item | Left Border Width (px)",
+    description: "Set a value for thickness of the left border of a portal when it's a card item. (Note: Set to 0 if you do not want this border.)",
+    defaultValue: "1",
+  });
+
+  plugin.track(async (reactivePlugin) => {
+    const carditemleftwidth = await reactivePlugin.settings.getSetting("carditemleftwidth");
+    await reactivePlugin.app.registerCSS(
+      "carditemleftwidth",
+      `#hierarchy-editor .portal-tree-node-box--card-item:before { border-left-color: ${carditemleftwidth}px; }`
+    );
+  });
+
+  // Width of Right Border when Card Item
+  await plugin.settings.registerStringSetting({
+    id: "carditemrightwidth",
+    title: "Card Item | Right Border Width (px)",
+    description: "Set a value for thickness of the right border of a portal when it's a card item. (Note: Set to 0 if you do not want this border.)",
+    defaultValue: "1.5",
+  });
+
+  plugin.track(async (reactivePlugin) => {
+    const carditemrightwidth = await reactivePlugin.settings.getSetting("carditemrightwidth");
+    await reactivePlugin.app.registerCSS(
+      "carditemrightwidth",
+      `#hierarchy-editor .portal-tree-node-box--card-item:before { border-right-color: ${carditemrightwidth}px; }`
+    );
   });
 }
 
