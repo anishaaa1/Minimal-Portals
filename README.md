@@ -1,9 +1,15 @@
 # Minimal Portals
 
-This snippet minimalizes the look of portals to be unobtrusive, clean, and pleasing to the eye.
+This snippet gives portals a cleaner look – less obtrusive, more minimal. You can also modify the colors to your preference from `Plugin Settings`.
 
-## Usage
+## Default Colors
+- On Hover | `#9437ff`
+- When Focused | `#6786fe`
+- When Selected | `#ff2600`
+- Card Item | `#6786fe`
 
-<!-- TODO: Describe usage -->
-
-<!-- ignore-after -->
+## Preview
+### Light Mode
+![Preview1](https://raw.githubusercontent.com/anishaaa1/Minimal-Portals/main/src/media/minimal-portals-light.gif)
+### Dark Mode
+![Preview2](https://raw.githubusercontent.com/anishaaa1/Minimal-Portals/main/src/media/minimal-portals-dark.gif)
