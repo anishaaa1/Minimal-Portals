@@ -1,12 +1,15 @@
 # Minimal Portals
 
-This snippet gives portals a cleaner look – less obtrusive, more minimal. You can also modify the colors to your preference from `Plugin Settings`.
+This snippet gives portals a cleaner look – less obtrusive, more minimal. <br>
+You can also modify the colors to your preference from `Plugin Settings`.
 
 ## Default Colors
-- On Hover | `#9437ff`
-- When Focused | `#6786fe`
-- When Selected | `#ff2600`
-- Card Item | `#6786fe`
+| State | Hex Code |
+| ------- | ------ |
+| On Hover | `#9437ff`|
+| When Focused | `#6786fe` |
+| When Selected | `#ff2600` |
+| Card Item | `#6786fe` |
 
 ## Preview
 ### Light Mode
