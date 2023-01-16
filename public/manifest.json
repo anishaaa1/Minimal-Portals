@@ -1,7 +1,7 @@
 {
   "author": "Anisha",
   "name": "Minimal Portals",
-  "description": "This snippet minimalizes the look of portals to be unobtrusive, clean, and pleasing to the eye.",
+  "description": "Gives portals a refreshing new look, and adds in some very minimal animations to really give you that zen feeling when working with them.",
   "enableOnMobile": true,
   "id": "Anisha-MinimalPortals",
   "repoUrl": "https://github.com/anishaaa1/Minimal-Portals",
@@ -9,7 +9,7 @@
   "version": {
     "major": 0,
     "minor": 0,
-    "patch": 2
+    "patch": 3
   },
   "requestNative": false,
   "requiredScopes": [
