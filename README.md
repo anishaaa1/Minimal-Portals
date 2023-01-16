@@ -1,6 +1,6 @@
 # Minimal Portals
 
-This snippet gives portals a cleaner look – less obtrusive, more minimal. <br>
+Gives portals a refreshing new look, and adds in some very minimal animations to really give you that zen feeling when working with them. <br>
 You can also modify the colors to your preference from `Plugin Settings`.
 
 ## Default Colors
